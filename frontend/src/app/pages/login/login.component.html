@@ -1,0 +1,25 @@
+<section class="container-fluid ">
+  <div class="row mt-2 mt-sm-2 mt-lg-0">
+    <section id="" class="col-sm-12 col-md-12 col-lg-6 p-lg-5 p-md-0 p-sm-0 mx-auto">
+
+      <form class="bg-light p-lg-5 rounded shadow p-3 mb-5 rounded" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+      </form>
+    </section>
+    <section class="col-sm-12 col-md-12 col-lg-6 p-lg-5 p-md-0 p-sm-0" id="right">
+
+    </section>
+
+  </div>
+
+
+</section>

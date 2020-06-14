@@ -1,0 +1,9 @@
+#right{
+  background-image: url('~src/assets/images/stu-reg.jpg')!important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#left{
+  background-color: #4D51FC;
+}

@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif !important;
+}
+body { margin: 0; font-family: 'Montserrat', sans-serif;
+
+}
+.bg-blue{
+  background-color: #3d5af1!important;
+}
+.bg-blue-dark{
+  background-color: #0e153a!important;
+}
+
+.bg-blue-light{
+  background-color: #22d1ee!important;
+}
+.bg-blue-lighter{
+  background-color: #e2f3f5!important;
+}
+.btn-primary{
+  background-color: #22d1ee!important;
+}

@@ -1,0 +1,73 @@
+<section class="container min-vh-100 ">
+  <section class="row">
+    <section class="col-12 m-0 mt-lg-3 mt-sm-2">
+      <button (click)="onBack()" mat-mini-fab class="btn btn-sm bg-dark" aria-label="Example icon button with a menu icon">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <h4>{{grade}}</h4>
+
+
+
+      <mat-tab-group mat-align-tabs="center" [selectedIndex]="index" (selectedTabChange)="onTabChange($event)">
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">help</mat-icon>
+            Papers
+          </ng-template>
+          <div class="p-2 p-lg-5">
+            <div *ngIf="noResPaper">
+              <h2>{{noResPaper}}</h2>
+            </div>
+
+            <mat-card *ngFor="let paper of papersArray" class="mb-2 d-flex justify-content-between">
+              <mat-card-title>{{paper.title}}</mat-card-title>
+              <mat-card-subtitle>{{paper.name}}</mat-card-subtitle>
+              <mat-card-content>{{paper.created_at|date:'medium'}}</mat-card-content>
+              <mat-card-actions>
+                <button class="btn-sm btn btn-success" (click)="onDownload(paper.path)">Download</button>
+              </mat-card-actions>
+            </mat-card>
+
+
+
+
+          </div>
+
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">note</mat-icon>
+            Tutes
+          </ng-template>
+          <div class="p-2 p-lg-5">
+            <div *ngIf="noResTute">
+              <h2>{{noResTute}}</h2>
+            </div>
+
+            <mat-card *ngFor="let tute of tutesArray" class="mb-2 d-flex justify-content-between">
+              <mat-card-title>{{tute.title}}</mat-card-title>
+              <mat-card-subtitle>{{tute.name}}</mat-card-subtitle>
+              <mat-card-content>{{tute.created_at|date:'medium'}}</mat-card-content>
+              <mat-card-actions>
+                <button class="btn-sm btn btn-success" (click)="onDownload(tute.path)">Download</button>
+              </mat-card-actions>
+            </mat-card>
+
+
+
+
+
+          </div>
+
+        </mat-tab>
+
+
+      </mat-tab-group>
+    </section>
+  </section>
+</section>
+
+
+
+

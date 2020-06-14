@@ -1,0 +1,73 @@
+<section class="container-fluid">
+  <div class="row mt-sm-2 mt-2 mt-lg-0">
+    <section id="" class="col-sm-12 col-md-12 col-lg-6 p-lg-5 p-md-0 p-sm-0">
+      <form class="bg-light p-lg-5 rounded shadow p-3 mb-5 rounded" (ngSubmit)="onSubmit()">
+        <!--name-->
+        <div class="form-group">
+          <label for="nameInput" class="">Name</label>
+          <input type="text"  required="required" class="form-control" id="nameInput" [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
+        </div>
+        <!--name end-->
+
+        <!--email-->
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <!--email end-->
+
+        <!--password-->
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" id="exampleInputPassword1">
+        </div>
+        <!--password end-->
+
+        <!--subjects-->
+        <div class="form-group">
+          <label for="exampleInputEmail1">Your teaching subjects</label>
+          <div>
+            <div *ngFor="let sub of subjectArray" class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" [id]="sub.id" (change)="onChanged($event)">
+              <label class="custom-control-label mr-2" [for]="sub.id">{{sub.name}}</label>
+            </div>
+          </div>
+        </div>
+        <!--subjects end-->
+
+        <!--grades-->
+        <div class="form-group">
+          <label for="exampleInputEmail1">Your teaching grades</label>
+          <div>
+            <div class="form-check form-check-inline form-group" *ngFor="let grade of gradesArray">
+              <div class="">
+                <input type="checkbox" class="form-check-input" [value]="grade.id" (change)="onChangedGrades($event)">
+                <label class="form-check-label ">{{grade.grade_name}}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--grades end-->
+
+
+        <button type="submit" class="btn btn-primary bg-yellow">Submit</button>
+        <div *ngIf="err" class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+          {{err}}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+      </form>
+
+    </section>
+    <section class="col-sm-12 col-md-12 col-lg-6 p-lg-5 p-md-0 p-sm-0" id="right">
+
+    </section>
+
+  </div>
+
+
+</section>
